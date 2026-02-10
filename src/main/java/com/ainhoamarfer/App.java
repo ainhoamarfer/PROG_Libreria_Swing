@@ -3,13 +3,10 @@ package com.ainhoamarfer;
 import com.ainhoamarfer.componente.BotonPeligro;
 import com.ainhoamarfer.componente.BotonPrincipal;
 import com.ainhoamarfer.componente.BotonSecundario;
+import com.ainhoamarfer.componente.CardPanel;
 
 import javax.swing.*;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main(String[] args) {
@@ -19,6 +16,9 @@ public class App
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
                 JPanel content = new JPanel();
+
+                content.setLayout(new BoxLayout(content, BoxLayout.Y_AXIS));
+
                 content.add(new BotonPrincipal("Clicame", 200, 50, actionEvent -> {
                     System.out.println("Clicado quedo");
                 }));
