@@ -4,58 +4,84 @@ import java.util.function.Consumer;
 
 public class CardPanelUiState {
 
-    private long id;
-    private String title;
-    private String description;
-    private String price;
-    private String discount;
-    private String language;
-    private String state;
+    //estado de la card
+    //si algo puede mutar es parte de su estado
 
+    //textos
+    private long id;
+    private String textTitle;
+    private String textDescription;
+    private Double textPrice; //precio sin descuento
+    private Double textDiscount; //precio tras el descuento
+    private String textLanguage;
+    private String textState;
+
+
+    private String textMainBtn;
+    private String textInfoBtn;
+    private String textDangerBtn;
+
+    //acciones
     private Consumer<Long> mainAction;
     private Consumer<Long> infoAction;
     private Consumer<Long> dangerAction;
 
-    public CardPanelUiState(long id, String title, String description, String price, String discount, String language, String state, Consumer<Long> mainAction, Consumer<Long> infoAction, Consumer<Long> dangerAction) {
+    public CardPanelUiState(long id, String textTitle, String textDescription, Double textPrice, Double textDiscount, String textLanguage, String textState, String textMainBtn, String textInfoBtn, String textDangerBtn, Consumer<Long> mainAction, Consumer<Long> infoAction, Consumer<Long> dangerAction) {
 
         this.id = id;
-        this.title = title;
-        this.description = description;
-        this.price = price;
-        this.discount = discount;
-        this.language = language;
-        this.state = state;
+        this.textTitle = textTitle;
+        this.textDescription = textDescription;
+        this.textPrice = textPrice;
+        this.textDiscount = textDiscount;
+        this.textLanguage = textLanguage;
+        this.textState = textState;
+        this.textMainBtn = textMainBtn;
+        this.textInfoBtn = textInfoBtn;
+        this.textDangerBtn = textDangerBtn;
         this.mainAction = mainAction;
         this.infoAction = infoAction;
         this.dangerAction = dangerAction;
     }
 
+
     public long getId() {
         return id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getTextTitle() {
+        return textTitle;
     }
 
-    public String getDescription() {
-        return description;
+    public String getTextDescription() {
+        return textDescription;
     }
 
-    public String getPrice() {
-        return price;
+    public Double getTextPrice() {
+        return textPrice;
     }
 
-    public String getDiscount() {
-        return discount;
+    public Double getTextDiscount() {
+        return textDiscount;
     }
 
-    public String getLanguage() {
-        return language;
+    public String getTextLanguage() {
+        return textLanguage;
     }
 
-    public String getState() {
-        return state;
+    public String getTextState() {
+        return textState;
+    }
+
+    public String getTextMainBtn() {
+        return textMainBtn;
+    }
+
+    public String getTextInfoBtn() {
+        return textInfoBtn;
+    }
+
+    public String getTextDangerBtn() {
+        return textDangerBtn;
     }
 
     public Consumer<Long> getMainAction() {

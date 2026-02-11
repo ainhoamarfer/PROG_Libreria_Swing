@@ -4,6 +4,7 @@ import com.ainhoamarfer.componente.BotonPeligro;
 import com.ainhoamarfer.componente.BotonPrincipal;
 import com.ainhoamarfer.componente.BotonSecundario;
 import com.ainhoamarfer.componente.CardPanel;
+import com.ainhoamarfer.componente.uiState.CardPanelUiState;
 
 import javax.swing.*;
 
@@ -18,6 +19,18 @@ public class App
                 JPanel content = new JPanel();
 
                 content.setLayout(new BoxLayout(content, BoxLayout.Y_AXIS));
+
+                CardPanelUiState cardState = new CardPanelUiState(0,"Terraria", "Un jueguito", 20.0, 0.0,
+                        "español", null, "Comprar", "Info", "No ver", actionEvent -> {
+                    System.out.println("Clicado quedo");}, actionEvent -> {
+                    System.out.println("Clicado quedo");}, actionEvent -> {
+                    System.out.println("Clicado quedo");});
+
+                CardPanel card = new CardPanel(cardState);
+                content.add(card);
+
+                JLabel label = new JLabel("<html><strike>Mensage</strike></html>");
+                content.add(label);
 
                 content.add(new BotonPrincipal("Clicame", 200, 50, actionEvent -> {
                     System.out.println("Clicado quedo");

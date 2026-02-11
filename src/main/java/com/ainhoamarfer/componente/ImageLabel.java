@@ -1,4 +1,6 @@
 package com.ainhoamarfer.componente;
 
-public class ImageLabel {
+import javax.swing.*;
+
+public class ImageLabel extends JLabel {
 }
